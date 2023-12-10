@@ -500,7 +500,7 @@ Reset procedure:
 
 ### 0x0460: Fuse 0
 
-### 0x0470: Fuse 0
+### 0x0470: Fuse 1
 
 ### 0x0500: GPIO Output Enable
 
