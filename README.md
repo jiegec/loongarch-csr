@@ -57,15 +57,16 @@
 16. GCI: [21:20], 0=ALL, 1=HIT, 2=SECURE(Trap on init or unimplemented cache instruction)
 17. GPERF: [26:24]
 
+
 ### GINTC (0x52, Guest interrupt control)
 
 来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.6)
 
 字段：
 
-1. VIP: [7:0]
-2. PIP: [15:8]
-3. HC: [23:16]
+1. VIP: [7:0] Virtual Interrupt Pending, write 1 to the bits in this field to inject the corresponding interrupt to the guest and 0 to clear it.
+2. PIP: [15:8] Pending Interrupt Passthrough, write 1 to the bits in this field to make the corresponding interrupt visible to the guest.
+3. HC: [23:16] Hardware Clear, set bits in this field to 1 to allow the the corresponding guest interrupt to be cleared by hardware and 0 to allow only manual clearing.
 
 ### GCNTC (0x53, Guest timer offset)
 
