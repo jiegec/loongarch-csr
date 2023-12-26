@@ -60,17 +60,19 @@
 
 ### GINTC (0x52, Guest interrupt control)
 
-来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.6)
+来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.6) [MIPS Virtualization Module](https://mips.com/products/architectures/ase/virtualization/)
 
 字段：
 
-1. VIP: [7:0] Virtual Interrupt Pending, write 1 to the bits in this field to inject the corresponding interrupt to the guest and 0 to clear it.
-2. PIP: [15:8] Pending Interrupt Passthrough, write 1 to the bits in this field to make the corresponding interrupt visible to the guest.
-3. HC: [23:16] Hardware Clear, set bits in this field to 1 to allow the the corresponding guest interrupt to be cleared by hardware and 0 to allow only manual clearing.
+1. VIP: [7:0] Virtual Interrupt Pending, write 1 to the bits in this field to inject the corresponding interrupt to the guest and 0 to clear it. See MIPS `GuestCtl2.VIP`.
+2. PIP: [15:8] Pending Interrupt Passthrough, write 1 to the bits in this field to make the corresponding interrupt visible to the guest. See MIPS `GuestCtl0.PIP`.
+3. HC: [23:16] Hardware Clear, set bits in this field to 1 to allow the the corresponding guest interrupt to be cleared by hardware and 0 to allow only manual clearing. See MIPS `GuestCtl2.HC`.
 
 ### GCNTC (0x53, Guest timer offset)
 
-来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.6)
+来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.6) [MIPS Virtualization Module](https://mips.com/products/architectures/ase/virtualization/)
+
+See MIPS `GTOffset`.
 
 ### IMPCTL1 (0x80, Loongson config1)
 
