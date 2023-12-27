@@ -86,23 +86,23 @@ See MIPS `GTOffset`.
 
 1. DATAPRE: [0], Data Prefetch
 2. INSTPRE: [1], Instruction Prefetch
-3. STPRE: [3:2]
+3. STPRE: [3:2], Store Prefetch
 4. RASDIS: [4], Return Address Stack Disable
 5. BRBTDIS: [5]
-6. LLSYNC: [6]
+6. LLSYNC: [6], LL Synchronize
 7. LIFEP: [7]
 8. STFILL: [8], Store Fill Buffer
-9. AUTO_FLUSHSFB: [9]
-10. ANTI_MISPEC: [10]
-11. USERCAC: [11]
+9. AUTO_FLUSHSFB: [9], Auto Flush Store Fill Buffer
+10. ANTI_MISPEC: [10], Anti Mis-speculation
+11. USERCAC: [11], Use Return ? Address Cache
 12. FASTLDQ: [12], Fast LD.Q
 13. DCLRU: [13], Data Cache LRU
 14. VCLRU: [14], Victim Cache LRU
 15. DISVC: [15]
-16. LLEXCL: [16]
-17. SCRAND: [17]
+16. LLEXCL: [16], LL Exclusive
+17. SCRAND: [17], SC Random Latency
 18. SSEN: [18]
-19. MISPEC: [27:20]
+19. MISPEC: [27:20], Mis-speculation
 
 ### IMPCTL2 (0x81, Loongson config2)
 
@@ -110,11 +110,11 @@ See MIPS `GTOffset`.
 
 字段：
 
-1. MTLB: [0]
-2. STLB: [1]
-3. DTLB: [2]
-4. ITLB: [3]
-5. BTAC: [4]
+1. MTLB: [0], Main TLB
+2. STLB: [1], Secondary TLB
+3. DTLB: [2], Data TLB
+4. ITLB: [3], Instruction TLB
+5. BTAC: [4], Branch Target Address Cache
 
 ### GNMI (0x82)
 
