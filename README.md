@@ -4,14 +4,16 @@
 
 ### GTLBC (0x15, Guest TLB Control)
 
-来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.6)
+来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.7-rc1)
 
 字段：
 
 1. GMTLBSZ: [5:0]
-2. USETGID: [12], Enable TGID
-3. TOTI: [13]
-4. TGID: [23:16]
+2. USETGID(renamed from USERID): [12], Use TGID, Enable using TGID
+3. TOTI: [13], Trap on TLB instruction?
+4. TGID(renamed from RID): [23:16], relevant to GSTAT.GID
+
+When switching to guest: set TGID = GSTAT.GID; switching to host: set TGID = 0.
 
 ### TRGP (0x16, TLBR read guest info)
 
@@ -22,6 +24,8 @@
 1. GTLB: [0]
 2. RID: [23:16]
 
+unused in kernel
+
 ### GSTAT (0x50, Guest status)
 
 来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.6)
@@ -29,24 +33,24 @@
 字段：
 
 1. VM: [0], In Virtual Machine
-2. PVM: [1], Previous VM, for ERTN PVM=1 means to enter VM
+2. PVM: [1], Previous VM, for ERTN PVM=1 means to enter VM, Set PVM bit to setup ertn to guest context, Disable PGM bit to enter root mode by default with next ertn
 3. GIDBIT: [9:4]
 2. GID: [23:16], Guest ID, correspond to VPID(Virtual Processor ID) in KVM
 
 ### GCFG (0x51, Guest config)
 
-来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.6)
+来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.7-rc1)
 
 字段：
 
-1. MATP_GUEST: [0]
-2. MATP_ROOT: [1]
-3. MATP_NEST: [2]
-4. MATC: [5:4], 0=GUEST, 1=ROOT, 2=NEST
+1. MATP_GUEST: [0], Memory Access Type?
+2. MATP_ROOT: [1], Memory Access Type?
+3. MATP_NEST: [2], Memory Access Type?
+4. MATC: [5:4], 0=GUEST, 1=ROOT(Control guest page CCA attribute), 2=NEST
 5. SITP: [6]
 6. SIT: [7]
 7. TITP: [8]
-8. TIT: [9], Trap on timer
+8. TIT: [9], Trap on timer, Disable guest use of hard timer
 9. TOEP: [10]
 10. TOE: [11], Trap on exception
 11. TOPP: [12]
