@@ -34,7 +34,7 @@ unused in kernel
 
 1. VM: [0], In Virtual Machine
 2. PVM: [1], Previous VM, for ERTN PVM=1 means to enter VM, Set PVM bit to setup ertn to guest context, Disable PGM bit to enter root mode by default with next ertn
-3. GIDBIT: [9:4]
+3. GIDBIT: [9:4], The number of hardware supported bits of GID
 2. GID: [23:16], Guest ID, correspond to VPID(Virtual Processor ID) in KVM
 
 ### GCFG (0x51, Guest config)
@@ -59,7 +59,7 @@ unused in kernel
 14. TORU: [15], Trap on root unimplemented
 15. GCIP: [19:16], 0bxxx1=ALL, 0bxx1x=HIT, 0bx1xx=SECURE
 16. GCI: [21:20], 0=ALL, 1=HIT, 2=SECURE(Trap on init or unimplemented cache instruction)
-17. GPERF: [26:24]
+17. GPERF: [26:24], Guest performance counter
 
 
 ### GINTC (0x52, Guest interrupt control)
