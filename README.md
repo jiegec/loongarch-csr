@@ -47,18 +47,18 @@ unused in kernel
 2. MATP_ROOT: [1], Memory Access Type?
 3. MATP_NEST: [2], Memory Access Type?
 4. MATC: [5:4], 0=GUEST, 1=ROOT(Control guest page CCA attribute), 2=NEST
-5. SITP: [6]
-6. SIT: [7]
-7. TITP: [8]
+5. SITP: [6], Software Interrupt Trap Pending
+6. SIT: [7], Software Interrupt Trap
+7. TITP: [8], Trap on timer Pending
 8. TIT: [9], Trap on timer, Disable guest use of hard timer
-9. TOEP: [10]
+9. TOEP: [10], Trap on exception Pending
 10. TOE: [11], Trap on exception
-11. TOPP: [12]
+11. TOPP: [12], Trap on privilege Pending
 12. TOP: [13], Trap on privilege
-13. TORUP: [14]
+13. TORUP: [14], Trap on root unimplemented Pending
 14. TORU: [15], Trap on root unimplemented
-15. GCIP: [19:16], 0bxxx1=ALL, 0bxx1x=HIT, 0bx1xx=SECURE
-16. GCI: [21:20], 0=ALL, 1=HIT, 2=SECURE(Trap on init or unimplemented cache instruction)
+15. GCIP: [19:16], Guest Cache Instruction Pending, 0bxxx1=ALL, 0bxx1x=HIT, 0bx1xx=SECURE
+16. GCI: [21:20], Guest Cache Instruction, 0=ALL, 1=HIT, 2=SECURE(Trap on init or unimplemented cache instruction)
 17. GPERF: [26:24], Guest performance counter
 
 
