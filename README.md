@@ -8,10 +8,10 @@
 
 字段：
 
-1. GMTLBSZ: [5:0]
+1. GMTLBSZ: [5:0]: Guest MTLB Size. We currently don't know its exact encoding.
 2. USETGID(renamed from USERID): [12], Use TGID, Enable using TGID
 3. TOTI: [13], Trap on TLB instruction?
-4. TGID(renamed from RID): [23:16], relevant to GSTAT.GID
+4. TGID(renamed from RID): [23:16], TLB GID, relevant to GSTAT.GID. In 3A5000, this value should be identical to GID. However, in 3A6000, these two values may be different.
 
 When switching to guest: set TGID = GSTAT.GID; switching to host: set TGID = 0.
 
