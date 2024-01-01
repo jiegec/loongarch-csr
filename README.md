@@ -15,6 +15,18 @@
 
 When switching to guest: set TGID = GSTAT.GID; switching to host: set TGID = 0.
 
+In KVM, [VPID vs VMID](https://lore.kernel.org/all/CAAhV-H51vjwuUgS-GEkMbDs+JAdmT0i3vd13RwuvYju=GwELFw@mail.gmail.com/):
+
+> For processor 3A5000 vpid is the same with vmid, with next generation processor
+> like 3A6000, it is seperated. vpid is for vcpu specific and represents
+> translation from gva to gpa; vmid is the whole vm and represents translation
+> from gpa to hpa, all vcpus shares the same vmid, so that tlb indexed with vpid
+> will be still in effective when flushing shadow tlbs indexed with vmid.
+>
+> Only that VM patch for 3A6000 is not submitted now, generation method for
+> vpid and vmid will be much different. It is prepared for future processor
+> update :)
+
 ### TRGP (0x16, TLBR read guest info)
 
 来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.6)
