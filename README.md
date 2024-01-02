@@ -122,8 +122,8 @@ See MIPS `GTOffset`.
 
 字段：
 
-1. MTLB: [0], Main TLB
-2. STLB: [1], Secondary TLB
+1. MTLB: [0], Multiple page size TLB
+2. STLB: [1], Singluar page size TLB
 3. DTLB: [2], Data TLB
 4. ITLB: [3], Instruction TLB
 5. BTAC: [4], Branch Target Address Cache
