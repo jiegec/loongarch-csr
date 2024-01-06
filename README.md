@@ -36,7 +36,7 @@ In KVM, [VPID vs VMID](https://lore.kernel.org/all/CAAhV-H51vjwuUgS-GEkMbDs+JAdm
 1. GTLB: [0]: Search in GTLB(GVA to GPA) or HTLB(GPA to HPA)?
 2. RID: [23:16]: TGID to match?
 
-Control the TGID and part of TLB for TLB instructions to operate on.
+Control the TGID and part of TLB for GTLB instructions to operate on.
 
 unused in kernel
 
