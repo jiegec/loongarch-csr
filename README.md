@@ -27,14 +27,16 @@ In KVM, [VPID vs VMID](https://lore.kernel.org/all/CAAhV-H51vjwuUgS-GEkMbDs+JAdm
 > vpid and vmid will be much different. It is prepared for future processor
 > update :)
 
-### TRGP (0x16, TLBR read guest info)
+### TRGP (0x16, TLBR read guest info)(COMPLETELY Inferred)
 
 来源：[Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/loongarch/include/asm/loongarch.h?h=v6.6)
 
 字段：
 
-1. GTLB: [0]
-2. RID: [23:16]
+1. GTLB: [0]: Search in GTLB(GVA to GPA) or HTLB(GPA to HPA)?
+2. RID: [23:16]: TGID to match?
+
+Control the TGID and part of TLB for TLB instructions to operate on.
 
 unused in kernel
 
