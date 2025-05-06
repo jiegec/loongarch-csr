@@ -255,6 +255,10 @@ IOCSR 可以通过 IOCSR 指令读写，也可以通过 MMIO 读写，其中 MMI
 
 ### 0x0010: Vendor
 
+Vendor and CPU Name should be set up by firmware, instead of being hardwired.
+
+[Reference](https://lore.kernel.org/all/CAAhV-H7t8NJYEA=JqSVVFPRZauuqc4pyj6bgNCDRjWcDqR2dqg@mail.gmail.com/)
+
 ### 0x0020: CPU Name
 
 ### 0x0180: Feature Configuration
