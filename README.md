@@ -712,3 +712,23 @@ Reset procedure:
 ### 0x1B18: External I/O Interrupt Status Register for Core 3 [255:192]
 
 ### 0x1C00 - 0x1CFF: External I/O Interrupt Mapping for Cores
+
+## PMU
+
+Source: [perf_event.c](https://github.com/torvalds/linux/blob/master/arch/loongarch/kernel/perf_event.c)
+
+- 0x00: cycles
+- 0x01: instructions
+- 0x02: branch executions
+- 0x03: branch misprediction
+- 0x04: dtlb access
+- 0x06: l1i access
+- 0x07: l1i miss
+- 0x08: l1d access
+- 0x09: l1d miss
+- 0x0c: llc access
+- 0x0d: llc miss
+- 0x3b: itlb miss
+- 0x3c: dtlb miss
+- 0xaa: l1d prefetch access
+- 0xa9: l1d prefetch miss
